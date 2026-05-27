@@ -1,0 +1,6 @@
+{
+  "name": "CINE21: Noir & Editorial",
+  "description": "A high-end film critique and cinephile exploration platform with live AI critics, showtimes, and classic frame analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

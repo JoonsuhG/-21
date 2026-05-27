@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif-kr: "Noto Serif KR", serif;
+  --font-serif-en: "Playfair Display", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-cine-red: #bb262c;
+  --color-cine-dark: #121214;
+  --color-cine-black: #0c0c0e;
+  --color-cine-gold: #bca075;
+}
+
+@layer utilities {
+  /* Dynamic custom transitions and aesthetics */
+  .transition-editorial {
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+/* Custom styling for ticket jagged borders & scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 140, 140, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 140, 140, 0.5);
+}
+
+/* Custom editorial paper noise or layout overlay if needed */
+.magazine-paper-grain {
+  position: relative;
+}
+.magazine-paper-grain::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  opacity: 0.015;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Movie Ticket perforated line */
+.ticket-edge-left {
+  position: relative;
+}
+.ticket-edge-left::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -6px;
+  width: 12px;
+  background-image: radial-gradient(circle, transparent 6px, currentColor 6px);
+  background-size: 12px 18px;
+  background-position: 0 0;
+}
